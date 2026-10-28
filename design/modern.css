@@ -1,0 +1,107 @@
+/* ZH Rijschool: moderne laag bovenop Divi.
+   Werkt alleen met kleuren/ruimte/vorm, laat de indeling van de pagina's ongemoeid.
+   Lokaal: gekoppeld via tools/apply-modern.js. Live: plakken in Divi > Thema-opties > Aangepaste CSS. */
+
+:root{
+  --zh-yellow:#FFE91E; --zh-yellow-soft:#FFF8C4;
+  --zh-blue:#10C0E6;   --zh-orange:#FF8E16; --zh-orange-dark:#F07F00;
+  --zh-ink:#101828;    --zh-text:#475467;   --zh-line:#E4E7EC; --zh-bg:#F8FAFC;
+  --zh-r:18px; --zh-r-sm:12px;
+  --zh-sh:0 1px 2px rgba(16,24,40,.05),0 10px 30px rgba(16,24,40,.08);
+  --zh-sh-lg:0 2px 4px rgba(16,24,40,.05),0 24px 60px rgba(16,24,40,.16);
+}
+
+/* basis */
+html{scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+#page-container h1,#page-container h2{letter-spacing:-.025em;text-wrap:balance}
+#page-container h3,#page-container h4{letter-spacing:-.01em}
+.et_pb_text_inner p,.et_pb_blurb_description p{line-height:1.7}
+.et_pb_text_inner p{color:#344054}
+::selection{background:var(--zh-yellow);color:#000}
+:focus-visible{outline:3px solid var(--zh-orange)!important;outline-offset:3px;border-radius:6px}
+
+/* header */
+.et-l--header .et_pb_section{box-shadow:0 1px 0 rgba(16,24,40,.06),0 6px 24px rgba(16,24,40,.04)}
+.et-l--header .et-menu>li>a,.et-l--header .et_pb_menu__menu a{font-weight:500!important;letter-spacing:.005em;transition:color .15s,opacity .15s}
+.et-l--header .et-menu>li>a:hover,.et-l--header .et_pb_menu__menu a:hover{color:var(--zh-orange)!important;opacity:1!important}
+.et-l--header a[href*="#proefles"],.et-l--header .et_pb_text a{transition:color .15s}
+
+/* knoppen */
+.et_pb_button,.et_pb_contact_submit.et_pb_button,.et_pb_promo_button{
+  border-radius:var(--zh-r-sm)!important;padding:.9em 1.7em!important;font-weight:600!important;letter-spacing:.04em!important;
+  box-shadow:0 8px 20px rgba(16,24,40,.18);transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease!important}
+.et_pb_button:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(16,24,40,.22);padding:.9em 1.7em!important}
+.et_pb_button:after{display:none!important}
+.et_pb_button:active{transform:translateY(0)}
+
+/* kaarten (de vier dienstkaarten) */
+.et_pb_column.et_pb_with_border{
+  border-radius:var(--zh-r)!important;border-color:var(--zh-line)!important;background:#fff;
+  box-shadow:var(--zh-sh);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.et_pb_column.et_pb_with_border:hover{transform:translateY(-6px);box-shadow:var(--zh-sh-lg);border-color:transparent!important}
+.et_pb_blurb .et-pb-icon{transition:transform .22s ease}
+.et_pb_column.et_pb_with_border:hover .et-pb-icon{transform:scale(1.08) rotate(-4deg)}
+
+/* afbeeldingen en video */
+.et_pb_image_wrap,.et_pb_video,.et_pb_video_box,.et_pb_image .et_pb_image_wrap img{border-radius:var(--zh-r)!important}
+.et_pb_image_wrap{box-shadow:var(--zh-sh);overflow:hidden}
+.et_pb_image_wrap img{transition:transform .5s ease}
+.et_pb_image:hover .et_pb_image_wrap img{transform:scale(1.03)}
+.et_pb_video{box-shadow:var(--zh-sh);overflow:hidden}
+
+/* logo's en pictogrammen: geen kaartstijl */
+.et-l--header .et_pb_image_wrap,.et-l--footer .et_pb_image_wrap,.et_pb_blurb_content .et_pb_image_wrap{box-shadow:none!important;border-radius:0!important;overflow:visible}
+.et-l--header .et_pb_image:hover .et_pb_image_wrap img{transform:none}
+
+/* tellers (20 examens, 8 leerlingen, ...) */
+.et_pb_number_counter .percent p{font-weight:700;letter-spacing:-.02em}
+
+/* badges en kleine labels */
+
+/* secties: meer lucht, rustiger ritme */
+@media (min-width:981px){
+  #et-main-area .et_pb_section:not(.et_pb_fullwidth_section){padding-top:clamp(40px,5vw,84px)!important;padding-bottom:clamp(40px,5vw,84px)!important}
+  #et-main-area .et_pb_section:first-child{padding-top:clamp(24px,3vw,48px)!important}
+}
+.et_pb_row{max-width:1180px}
+
+/* gele sectie: zachter en moderner */
+#et-main-area .et_pb_section[style*="255, 233"],#et-main-area .et_pb_section.et_pb_section_7{background-image:linear-gradient(180deg,#FFEE4A 0%,#FFE91E 60%,#FFDF00 100%)!important}
+
+/* formulieren elders op de site (oude Divi-formulieren) */
+.et_pb_contact_form_container:not(.zh-form) input[type=text],.et_pb_contact_form_container:not(.zh-form) input[type=email],.et_pb_contact_form_container:not(.zh-form) textarea,.et_pb_contact_form_container:not(.zh-form) select{
+  border:1.5px solid var(--zh-line)!important;border-radius:var(--zh-r-sm)!important;padding:14px 16px!important;background:#fff!important;transition:border-color .15s,box-shadow .15s}
+.et_pb_contact_form_container:not(.zh-form) input:focus,.et_pb_contact_form_container:not(.zh-form) textarea:focus{border-color:var(--zh-orange)!important;box-shadow:0 0 0 4px rgba(255,142,22,.18)!important}
+.et_pb_contact_form_container:not(.zh-form){border-radius:var(--zh-r)!important}
+
+/* footer */
+.et-l--footer a{transition:color .15s,opacity .15s}
+.et-l--footer a:hover{opacity:.8}
+.et-l--footer .et_pb_section{border-top:1px solid rgba(16,24,40,.06)}
+
+/* review-widget en lijsten */
+.wp-gr .wp-google-review,.wp-google-review{border-radius:var(--zh-r)!important;box-shadow:var(--zh-sh)!important;border:1px solid var(--zh-line)!important}
+
+/* whatsapp-knop */
+.ht-ctc,.ctc-analytics{filter:drop-shadow(0 8px 18px rgba(16,24,40,.25))}
+
+/* mobiel */
+@media (max-width:767px){
+  .et_pb_row{width:90%!important;margin-left:auto!important;margin-right:auto!important}
+  .dsm_text_badges,.dsm_text_badges *{white-space:normal!important;max-width:100%}
+  .dsm_text_badges .dsm_text_badges_container,.dsm_text_badges_wrapper{display:flex;flex-wrap:wrap;gap:8px}
+  /* teller-strook: drie cijfers naast elkaar in plaats van drie hoge blokken */
+  .et_pb_row:has(.et_pb_number_counter){display:flex!important;flex-wrap:nowrap!important;width:100%!important}
+  .et_pb_row:has(.et_pb_number_counter) .et_pb_column{width:33.333%!important;margin:0!important;float:none}
+  .et_pb_row:has(.et_pb_number_counter) .et_pb_number_counter{margin:0!important;padding:18px 4px!important}
+  .et_pb_row:has(.et_pb_number_counter) .percent p{font-size:28px!important}
+  .et_pb_row:has(.et_pb_number_counter) .et_pb_module_header,.et_pb_row:has(.et_pb_number_counter) h3{font-size:12px!important}
+  .et_pb_button{width:100%;text-align:center}
+  .et_pb_column.et_pb_with_border:hover{transform:none}
+  #page-container h1{font-size:clamp(34px,9vw,48px)!important;line-height:1.08!important}
+  #page-container h2{font-size:clamp(28px,7.5vw,36px)!important;line-height:1.12!important}
+}
+
+/* beweging respecteren */
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
