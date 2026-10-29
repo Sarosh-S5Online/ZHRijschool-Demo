@@ -487,3 +487,5 @@ body #page-container .et_pb_section a.et_pb_button[class*="_tb_footer"],body #pa
 .zh-m-alt{margin:16px 0 0;text-align:center;color:var(--zh-text)}
 .zh-m-alt a{color:var(--zh-blue-text)!important;font-weight:700;text-decoration:underline}
 @media(max-width:600px){.zh-modal{padding:0;align-items:end}.zh-modal-box{max-width:none;border-radius:22px 22px 0 0;max-height:94vh;overflow-y:auto;padding:28px 20px 22px}.zh-two{grid-template-columns:1fr}}
+.zh-cards{grid-template-columns:repeat(3,1fr)}.zh-cards-2{grid-template-columns:repeat(2,1fr)}.zh-bigprice{font-family:Fredoka,sans-serif;font-size:40px;color:var(--zh-blue-text);margin:4px 0 8px!important;line-height:1}
+@media(max-width:980px){.zh-cards,.zh-cards-2{grid-template-columns:1fr 1fr}}@media(max-width:600px){.zh-cards,.zh-cards-2{grid-template-columns:1fr}}
